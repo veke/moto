@@ -1,0 +1,20 @@
+{
+  "name": "moto",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vennamo/moto",
+  "authors": [
+    "Vennamo <vennamo@users.noreply.github.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "famous": "~0.3.5"
+  }
+}
