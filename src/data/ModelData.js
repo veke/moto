@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 			'Honda': [
 				
 					{
-					'name': 'CB1000R',
+					'name': 'CB1000R Pearl White',
 					'imageUrl': 'src/img/honda/cb1000r.png',
 					'specs': [
 							 
@@ -276,7 +276,5 @@ define(function(require, exports, module) {
 				
 				]
 		}
-		]
-		
-    
+	]	
 });

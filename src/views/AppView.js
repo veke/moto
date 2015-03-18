@@ -69,7 +69,6 @@ define(function(require, exports, module) {
 	    this.add(this.pageModifier).add(this.pageView);
 
         this.pageView.lightBox.show(this.pageView.brands[0]);
-        //this.add(this.pageView.brands[0])
 	  	   	    
     }
     
@@ -110,7 +109,7 @@ define(function(require, exports, module) {
 			this.pageView.dots[this.currentBrandItem][i].setOpacity(0.5);	    	
 		}
 		
-		//this.pageView.dots[this.currentBrandItem][page].setOpacity(1);
+		this.pageView.dots[this.currentBrandItem][page].setOpacity(1);
 
     }
 
