@@ -1,7 +1,6 @@
-/* eslint-env browser */
-/* globals define */
+/* eslint-env browser, amd */
 
-/*** BrandView.js ***/
+/* BrandView.js */
 
 define(function(require, exports, module) {
 
@@ -27,7 +26,8 @@ define(function(require, exports, module) {
 
     BrandView.DEFAULT_OPTIONS = {
         index: 0,
-        brand: ''
+        brand: '',
+        data: null
     };
 
     function _createBrand() {
@@ -68,8 +68,6 @@ define(function(require, exports, module) {
         this.scrollView.on('pageChange', function() {
 
             var currentPage = this.scrollView._node.index;
-
-            console.log(currentPage);
 
             this._eventOutput.emit('modelChange', currentPage);
 

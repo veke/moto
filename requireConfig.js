@@ -1,4 +1,4 @@
-/*globals require*/
+/* eslint-env browser, amd */
 
 require.config({
     paths: {
@@ -8,4 +8,4 @@ require.config({
     }
 });
 
-require(['src/main']);
+require(['src/App']);

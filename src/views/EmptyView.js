@@ -1,8 +1,10 @@
+/* eslint-env browser, amd */
+
 define(function(require, exports, module) {
-    var View          = require('famous/core/View');
-    var Surface       = require('famous/core/Surface');
-    var Transform     = require('famous/core/Transform');
-    var StateModifier = require('famous/modifiers/StateModifier');
+
+    'use strict';
+
+    var View = require('famous/core/View');
 
     function EmptyView() {
         View.apply(this, arguments);
@@ -14,4 +16,5 @@ define(function(require, exports, module) {
     EmptyView.DEFAULT_OPTIONS = {};
 
     module.exports = EmptyView;
+
 });
