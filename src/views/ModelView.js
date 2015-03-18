@@ -9,13 +9,24 @@ define(function(require, exports, module) {
     var Transform        = require('famous/core/Transform');
     var StateModifier    = require('famous/modifiers/StateModifier');
 
+    var mod = new StateModifier({
+        origin: [0.5, 1],
+        align: [0.5, 0]
+    });
+
+    var wrapper = new ContainerSurface({
+        size: [document.documentElement.clientWidth-20, document.documentElement.clientHeight]
+    });
+
     function ModelView() {
         View.apply(this, arguments);
                 
         _createBackground.call(this);        
         _createImage.call(this);
         _createTable.call(this);
-        
+
+        //this.add(mod).add(wrapper);
+
     }
 
     ModelView.prototype = Object.create(View.prototype);
@@ -32,8 +43,9 @@ define(function(require, exports, module) {
 	    var bgSurface = new Surface();
 	    
 	    bgSurface.pipe(this._eventOutput);
-	    
-	    this.add(bgSurface);
+	   
+        //wrapper.add(bgSurface);
+        //this.add(bgSurface);
 	    
     }
     
@@ -47,12 +59,13 @@ define(function(require, exports, module) {
 	    
 	    var modelImgModifier = new StateModifier({
 		    align: [0.5, 0],
-			origin: [0.5, 0],
-			transform: Transform.translate(0, 10, 0)
+			origin: [0.5, 0]
+			//transform: Transform.translate(0, 51, 0)
 	    });
 	    	    
 	    modelImgSurface.pipe(this._eventOutput);
 	   
+        //wrapper.add(modelImgModifier).add(modelImgSurface);
 	    this.add(modelImgModifier).add(modelImgSurface);
  
     }
@@ -60,7 +73,8 @@ define(function(require, exports, module) {
     function _createTable() {
 	    
 	    var modelTableSurface = new ContainerSurface({
-		    size: [window.innerWidth-10, window.innerHeight-20-178-51-5],
+		    size: [undefined, undefined],
+            //size: [document.documentElement.clientWidth-15, document.documentElement.clientHeight-(20-178-51-5-40)],
 		    classes: ['tableBg']
 	    });
 	    
@@ -76,7 +90,9 @@ define(function(require, exports, module) {
 	    	classes: ['modelTitle', 'menuItem']
 	    });
 	    
-	    var scrollview = new Scrollview();
+	    var scrollview = new Scrollview({
+            paginated: true
+        });
 		var surfaces = [];
 		
 		scrollview.sequenceFrom(surfaces);
@@ -93,18 +109,23 @@ define(function(require, exports, module) {
 		   
 		   specElem.pipe(scrollview);
 		   surfaces.push(specElem);
+
 		}
 		
 		var scrollviewModifier = new StateModifier({
 			transform: Transform.translate(0, 40, 0)
 	    });
 	    	    
-	    modelTableSurface.add(scrollviewModifier).add(scrollview);
-	    modelTableSurface.add(modelTitleSurface);
+	    //modelTableSurface.add(scrollviewModifier).add(scrollview);
+	    //modelTableSurface.add(modelTitleSurface);
 	    
-	    modelTableSurface.pipe(this._eventOutput);
+	    //modelTableSurface.pipe(this._eventOutput);
 	    
-	    this.add(modelTableModifier).add(modelTableSurface);
+	   // this.add(modelTableModifier).add(modelTableSurface);
+
+//       this.add(surfaces);
+
+        //wrapper.add(modelTableModifier).add(modelTableSurface);
 	    
     } 
 

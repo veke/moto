@@ -145,7 +145,6 @@ define(function(require, exports, module) {
 	function _setListeners() {
 	
         this.toggleMenuIconTextContainer.on('click', function(e) {
-            alert(0);
             this._eventOutput.emit('menuToggle', e);
         }.bind(this));
         

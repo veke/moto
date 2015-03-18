@@ -1,13 +1,9 @@
 /*** BrandView.js ***/
 
 define(function(require, exports, module) {
-    var View          	 = require('famous/core/View');
-    var Scrollview 	  	 = require('famous/views/Scrollview');
-    var Surface          = require('famous/core/Surface');
-    var ContainerSurface = require('famous/surfaces/ContainerSurface');
-    
-    var Transform     	 = require('famous/core/Transform');
-    var StateModifier 	 = require('famous/modifiers/StateModifier');
+    var View       = require('famous/core/View');
+    var Scrollview = require('famous/views/Scrollview');
+    var Surface    = require('famous/core/Surface');
 
     var ModelView = require('views/ModelView');
     var ModelData = require('data/ModelData');
@@ -36,10 +32,11 @@ define(function(require, exports, module) {
     	this.models = [];
 				
 		this.scrollView = new Scrollview({
-	        direction: 1,
-			paginated: true
-		});
-		            
+            paginated: 1
+        });
+
+        this.scrollView.sequenceFrom(this.models);
+            
     	for(var i=0, len = ModelData[this.options.index][brand].length; i<len; i++) {
     
 		    this.model = new ModelView({
@@ -52,10 +49,22 @@ define(function(require, exports, module) {
 	     	
 	        this.models.push(this.model);
 	                
-	    }
-	             
-		this.scrollView.sequenceFrom(this.models);
-		 
+	    } /*
+
+        for (var i = 0, temp; i < 40; i++) {
+            temp = new Surface({
+                 content: "Surface: " + (i + 1),
+                 size: [undefined, 200],
+                 properties: {
+                     backgroundColor: "hsl(" + (i * 360 / 40) + ", 100%, 50%)",
+                     lineHeight: "200px",
+                     textAlign: "center"
+                 }
+             });
+            temp.pipe(this.scrollView);
+            this.models.push(temp);
+        }
+		 */
 		this.scrollView.on('pageChange', function() {
 		
 			var currentPage = this.scrollView._node.index;

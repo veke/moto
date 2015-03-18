@@ -37,8 +37,8 @@ define(function(require, exports, module) {
             inOrigin: [0, 0],
             outOrigin: [0, 0],
             showOrigin: [0, 0],
-            inTransform: Transform.translate(0, window.innerHeight, 0),
-            outTransform: Transform.translate(-window.innerWidth, 0, 0),
+            inTransform: Transform.translate(0, document.documentElement.clientHeight, 0),
+            outTransform: Transform.translate(-document.documentElement.clientWidth, 0, 0),
             inTransition: { duration: 580, curve: Easing.inOutExpo },
             outTransition: { duration: 630, curve: Easing.inOutExpo }
         }
@@ -124,13 +124,12 @@ define(function(require, exports, module) {
 		   	
 		   	brand.on('modelChange', function(page) {
 		   		this._eventOutput.emit('modelChange', page);
-		   		
 		   	}.bind(this));
 		  	
 		   	this.brands.push(brand.scrollView);
 		  
 		   	var dotModifiers = [];
-		   	
+    		   	
 		   	for(var j=0, top=20; j<ModelData[i][Object.keys(ModelData[i])].length; j++, top+=20) {
 		    
 				var dot = new Surface({
@@ -158,8 +157,14 @@ define(function(require, exports, module) {
 			this.dots.push(dotModifiers);
 			
 		}
+
+         var test = new StateModifier({
+                align: [0, 1.0],
+                origin: [0, 0],
+                transform: Transform.translate(-document.documentElement.clientWidth/2, -document.documentElement.clientHeight/2, 0)
+            }); 
      
-        this.layout.content.add(this.lightBox);
+        this.layout.content.add(test).add(this.lightBox);
          
     }
     
