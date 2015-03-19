@@ -2,19 +2,14 @@
   "name": "moto",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/vennamo/moto.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vennamo/moto/issues"
-  },
+  "author": "Vennamo",
   "homepage": "https://github.com/vennamo/moto",
   "devDependencies": {
     "connect-livereload": "^0.5.3",
