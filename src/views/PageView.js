@@ -41,11 +41,8 @@ define(function(require, exports, module) {
         lightboxOpts: {
             inOpacity: 0,
             outOpacity: 0,
-            inOrigin: [0, 0],
-            outOrigin: [0, 0],
-            showOrigin: [0, 0],
             inTransform: Transform.translate(0, document.documentElement.clientHeight, 0),
-            outTransform: Transform.translate(-document.documentElement.clientWidth, 0, 0),
+            outTransform: Transform.translate(0, document.documentElement.clientHeight, 0),
             inTransition: {
                 duration: 580,
                 curve: Easing.inOutExpo
@@ -137,7 +134,8 @@ define(function(require, exports, module) {
 
             var brand = new BrandView({
                 index: i,
-                brand: Object.keys(modelData[i])
+                brand: Object.keys(modelData[i]),
+                data: modelData
             });
 
             brand.on('modelChange', function(page) {
@@ -175,13 +173,7 @@ define(function(require, exports, module) {
 
         }
 
-        var originModifier = new StateModifier({
-            align: [0, 1.0],
-            origin: [0, 0],
-            transform: Transform.translate(-this.options.clientWidth / 2, -this.options.clientHeight / 2, 0)
-        });
-
-        this.layout.content.add(originModifier).add(this.lightBox);
+        this.layout.content.add(this.lightBox);
 
     }
 

@@ -55,7 +55,7 @@ define(function(require, exports, module) {
         var modelImgModifier = new StateModifier({
             align: [0.5, 0],
             origin: [0.5, 0],
-            transform: Transform.translate(0, 35, 0)
+            transform: Transform.translate(0, 20, 0)
         });
 
         this.modelImgSurface.pipe(this._eventOutput);
@@ -72,14 +72,14 @@ define(function(require, exports, module) {
         var clientHeight = document.documentElement.clientHeight;
 
         var modelTableSurface = new ContainerSurface({
-            size: [clientWidth - this.options.tableMargin, clientHeight - 255],
+            size: [clientWidth - this.options.tableMargin, clientHeight - 275],
             classes: ['tableBg']
         });
 
         var modelTableModifier = new StateModifier({
             align: [0.5, 0],
             origin: [0.5, 0],
-            transform: Transform.translate(0, 220, 0)
+            transform: Transform.translate(0, 215, 0)
         });
 
         this.modelTitleSurface = new Surface({

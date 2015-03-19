@@ -9,11 +9,8 @@ define(function(require, exports, module) {
     var Engine = require('famous/core/Engine');
     var AppView = require('views/AppView');
     var Utility = require('famous/utilities/Utility');
-    //var Timer = require('famous/utilities/Timer');
 
     var mainContext = Engine.createContext();
-
-    //mainContext.setPerspective(900);
 
     Utility.loadURL('src/data/modelData.json', function(response) {
 

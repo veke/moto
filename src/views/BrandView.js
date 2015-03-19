@@ -11,7 +11,6 @@ define(function(require, exports, module) {
     var ContainerSurface = require('famous/surfaces/ContainerSurface');
 
     var ModelView = require('views/ModelView');
-    var ModelData = require('data/ModelData');
 
     function BrandView() {
 
@@ -34,13 +33,14 @@ define(function(require, exports, module) {
 
         var brand = this.options.brand;
         var index = this.options.index;
-        var len = ModelData[index][brand].length;
+        var len = this.options.data[index][brand].length;
         var container;
 
         var models = [];
 
         this.scrollView = new Scrollview({
-            paginated: true
+            paginated: true,
+            direction: 0
         });
 
         this.scrollView.sequenceFrom(models);
@@ -50,9 +50,9 @@ define(function(require, exports, module) {
             container = new ContainerSurface();
 
             var model = new ModelView({
-                imageUrl: ModelData[index][brand][i].imageUrl,
-                model: ModelData[index][brand][i].name,
-                specs: ModelData[index][brand][i].specs
+                imageUrl: this.options.data[index][brand][i].imageUrl,
+                model: this.options.data[index][brand][i].name,
+                specs: this.options.data[index][brand][i].specs
             });
 
             container.add(model);

@@ -4,7 +4,7 @@
                 
                     {
                     "name": "CB1000R Pearl White",
-                    "imageUrl": "src/img/honda/cb1000r.png",
+                    "imageUrl": "src/img/honda/cb1000r.jpg",
                     "specs": [
                              
                              { "Price": "14,490€" },
@@ -22,7 +22,7 @@
                 
                     {
                     "name": "CBR1000RR",
-                    "imageUrl": "src/img/honda/cbr1000rr.png",
+                    "imageUrl": "src/img/honda/cbr1000rr.jpg",
                     "specs": [
                     
                             { "Price": "19,990€" },

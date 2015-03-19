@@ -5,7 +5,7 @@ define(function(require, exports, module) {
 				
 					{
 					'name': 'CB1000R Pearl White',
-					'imageUrl': 'src/img/honda/cb1000r.png',
+					'imageUrl': 'src/img/honda/cb1000r.jpg',
 					'specs': [
 							 
 							 { 'Price': '14,490€' },
