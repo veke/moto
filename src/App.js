@@ -18,7 +18,6 @@ define(function(require, exports, module) {
             return;
         }
 
-        // Consume response
         var data = JSON.parse(response);
 
         var appView = new AppView({

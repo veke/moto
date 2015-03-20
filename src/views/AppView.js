@@ -18,7 +18,6 @@ define(function(require, exports, module) {
 
     var PageView = require('views/PageView');
     var MenuView = require('views/MenuView');
-    var MenuData = require('data/MenuData');
 
     GenericSync.register({
         'mouse': MouseSync,
@@ -56,7 +55,7 @@ define(function(require, exports, module) {
         },
         posThreshold: 138,
         velThreshold: 0.75,
-        data: null
+        data: []
     };
 
     function _createPageView() {
@@ -80,7 +79,7 @@ define(function(require, exports, module) {
     function _createMenuView() {
 
         this.menuView = new MenuView({
-            menuData: MenuData
+            menuData: this.options.data
         });
 
         this.menuViewModifier = new Modifier({

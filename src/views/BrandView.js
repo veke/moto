@@ -26,7 +26,7 @@ define(function(require, exports, module) {
     BrandView.DEFAULT_OPTIONS = {
         index: 0,
         brand: '',
-        data: null
+        data: []
     };
 
     function _createBrand() {
