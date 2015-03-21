@@ -174,7 +174,7 @@ define(function(require, exports, module) {
         }
 
         this.introTextModifier = new StateModifier({
-            transform: Transform.translate(0, -100, 0),
+            transform: Transform.translate(0, this.options.clientHeight / 2, 0),
             opacity: 0
         });
 
