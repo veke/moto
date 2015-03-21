@@ -40,7 +40,8 @@ define(function(require, exports, module) {
 
         this.scrollView = new Scrollview({
             paginated: true,
-            direction: 0
+            direction: 0,
+            pagePeriod: 400
         });
 
         this.scrollView.sequenceFrom(models);

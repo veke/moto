@@ -1,3 +1,7 @@
+body, html {
+	height: 100%;
+}
+
 body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -5,10 +9,32 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background: #000;
+    background: linear-gradient(#062736, #02161b);
  	color: #fff;
  	font-family: 'Oswald', sans-serif;
  	}
+
+ .loader {
+ 	position: absolute;
+ 	left: 50%;
+ 	top: 50%;
+ 	transform: translate(-25px, -25px);
+ }
+
+ .intro {
+ 	text-align: center;
+ 	text-shadow: 0 0 5px #000;
+ }
+
+ h1 {
+ 	font-size: 35px;
+ 	letter-spacing: 3px;
+ 	margin-bottom: 10px;
+ }
+
+ .intro p {
+ 	font-size: 18px;
+ }
 
 .header {
 	background: linear-gradient(#083042, #051f2a);

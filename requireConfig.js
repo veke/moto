@@ -2,9 +2,9 @@
 
 require.config({
     paths: {
+        lodash: 'bower_components/lodash/lodash.min',
         famous: 'bower_components/famous/src',
-        views: 'src/views',
-        data: 'src/data'
+        views: 'src/views'
     }
 });
 

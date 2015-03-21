@@ -9,12 +9,13 @@ define(function(require, exports, module) {
     var View = require('famous/core/View');
     var Transform = require('famous/core/Transform');
     var Modifier = require('famous/core/Modifier');
-    var FastClick = require('famous/inputs/FastClick');
+    //var FastClick = require('famous/inputs/FastClick');
     var Easing = require('famous/transitions/Easing');
     var Transitionable = require('famous/transitions/Transitionable');
     var GenericSync = require('famous/inputs/GenericSync');
     var MouseSync = require('famous/inputs/MouseSync');
     var TouchSync = require('famous/inputs/TouchSync');
+    var _ = require('lodash');
 
     var PageView = require('views/PageView');
     var MenuView = require('views/MenuView');
@@ -30,8 +31,7 @@ define(function(require, exports, module) {
 
         this.menuToggle = false;
         this.pageViewPos = new Transitionable(0);
-        this.currentBrand = null;
-        this.currentBrandItem = 0;
+        this.currentPage = null;
 
         this.dragStart = false;
 
@@ -72,8 +72,6 @@ define(function(require, exports, module) {
 
         this.add(this.pageModifier).add(this.pageView);
 
-        //this.pageView.lightBox.show(this.pageView.brands[0]);
-
     }
 
     function _createMenuView() {
@@ -104,16 +102,6 @@ define(function(require, exports, module) {
         this.pageView.on('modelChange', this.modelChange.bind(this));
 
     }
-
-    AppView.prototype.modelChange = function(page) {
-
-        for (var i = 0; i < this.pageView.dots[this.currentBrandItem].length; i++) {
-            this.pageView.dots[this.currentBrandItem][i].setOpacity(0.5);
-        }
-
-        this.pageView.dots[this.currentBrandItem][page].setOpacity(1);
-
-    };
 
     /*
     function _handleSwipe() {
@@ -182,95 +170,76 @@ define(function(require, exports, module) {
 
     }
 
+    function _clearDots() {
+
+        // Clear pagination dots
+        for (var i = 0; i < this.pageView.dots.length; i++) {
+            for (var j = 0; j < this.pageView.dots[i].length; j++) {
+                this.pageView.dots[i][j].setOpacity(0);
+            }
+        }
+
+        // Clear current menu arrow
+        for (var k = 0; k < this.menuView.menuItems.length; k++) {
+            this.menuView.menuItems[k].menuCurrentModifier.setOpacity(0, this.options.transition);
+        }
+
+    }
+
     AppView.prototype.toggleView = function(e) {
 
-        this.pageView.bodyBlurModifier.setOpacity(0.9, {
-            duration: 600,
-            curve: Easing.inOutExpo
-        });
-
-        var targetItem = e.target.innerText;
+        var targetSlide = _.indexOf(this.options.data, _.find(this.options.data, e.target.innerText));
 
         this.slideLeft();
 
-        if (this.currentBrand !== targetItem) {
+        if (targetSlide >= 0) {
 
-			// Clear pagination dots
-            for (var i = 0; i < this.pageView.dots.length; i++) {
+            this.pageView.bodyBlurModifier.setOpacity(0.9, {
+                duration: 600,
+                curve: Easing.inOutExpo
+            });
 
-                for (var j = 0; j < this.pageView.dots[i].length; j++) {
-                    this.pageView.dots[i][j].setOpacity(0);
-                }
+            if (this.currentPage !== targetSlide) {
+
+                _clearDots.call(this);
+
+                // Clear IntroText
+                this.pageView.introTextModifier.setOpacity(0, {
+                    duration: 200
+                });
+
+                this.pageView.lightBox.show(this.pageView.brands[targetSlide]);
+                this.menuView.menuItems[targetSlide].menuCurrentModifier.setOpacity(1, this.options.transition);
+
+                var currentSlide = this.pageView.brands[targetSlide].getCurrentIndex();
+
+                _setDots(this.pageView.dots[targetSlide], currentSlide ? currentSlide : 0);
 
             }
 
-            for (var k = 0; k <= 5; k++) {
-                this.menuView.menuItems[k].menuCurrentModifier.setOpacity(0, this.options.transition);
-            }
+            this.currentPage = targetSlide;
 
-            switch (targetItem) {
+        } else {
 
-                case 'Honda':
+            _clearDots.call(this);
 
-                    this.currentBrandItem = 0;
-                    this.pageView.lightBox.show(this.pageView.brands[0]);
-                    this.menuView.menuItems[0].menuCurrentModifier.setOpacity(1, this.options.transition);
+            this.pageView.lightBox.hide();
+            this.pageView.bodyBlurModifier.setOpacity(0);
 
-                    break;
-
-                case 'Suzuki':
-
-                    this.currentBrandItem = 1;
-                    this.pageView.lightBox.show(this.pageView.brands[1]);
-                    this.menuView.menuItems[1].menuCurrentModifier.setOpacity(1, this.options.transition);
-
-                    break;
-
-                case 'Kawasaki':
-
-                    this.currentBrandItem = 2;
-                    this.menuView.menuItems[2].menuCurrentModifier.setOpacity(1, this.options.transition);
-                    this.pageView.lightBox.show(this.pageView.brands[2]);
-
-                    break;
-
-                case 'Yamaha':
-
-                    this.currentBrandItem = 3;
-                    this.menuView.menuItems[3].menuCurrentModifier.setOpacity(1, this.options.transition);
-                    this.pageView.lightBox.show(this.pageView.brands[3]);
-
-                    break;
-
-                case 'BMV':
-
-                    this.currentBrandItem = 3;
-                    this.menuView.menuItems[4].menuCurrentModifier.setOpacity(1, this.options.transition);
-                    this.pageView.lightBox.show(this.pageView.brands[4]);
-
-                    break;
-
-                case 'Ducati':
-
-                    this.currentBrandItem = 3;
-                    this.menuView.menuItems[5].menuCurrentModifier.setOpacity(1, this.options.transition);
-                    this.pageView.lightBox.show(this.pageView.brands[5]);
-
-                    break;
-
-                default:
-
-                    this.pageView.lightBox.hide();
-                    this.pageView.bodyBlurModifier.setOpacity(0);
-            }
-
-            var currentPage = this.pageView.brands[this.currentBrandItem]._currentIndex;
-
-            _setDots(this.pageView.dots[this.currentBrandItem], currentPage ? currentPage : 0);
-
+            this.pageView.introTextModifier.setOpacity(1, {
+                duration: 200
+            });
         }
 
-        this.currentBrand = targetItem;
+    };
+
+    AppView.prototype.modelChange = function(page) {
+
+        for (var i = 0; i < this.pageView.dots[this.currentPage].length; i++) {
+            this.pageView.dots[this.currentPage][i].setOpacity(0.5);
+        }
+
+        this.pageView.dots[this.currentPage][page].setOpacity(1);
 
     };
 

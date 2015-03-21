@@ -34,7 +34,7 @@ define(function(require, exports, module) {
     PageView.prototype.constructor = PageView;
 
     PageView.DEFAULT_OPTIONS = {
-        data: null,
+        data: [],
         clientHeight: document.documentElement.clientHeight,
         clientWidth: document.documentElement.clientWidth,
         headerSize: 51,
@@ -172,6 +172,29 @@ define(function(require, exports, module) {
             this.dots.push(dotModifiers);
 
         }
+
+        this.introTextModifier = new StateModifier({
+            transform: Transform.translate(0, -100, 0),
+            opacity: 0
+        });
+
+        this.introTextModifier.setTransform(
+            Transform.translate(0, 150, 0), {
+                duration: 1500, curve: Easing.outElastic
+            }
+        );
+
+        this.introTextModifier.setOpacity(1, {
+            duration: 500,
+            curve: Easing.inOutExpo}
+        );
+
+        this.introText = new Surface({
+            content: '<h1>Motospecs</h1><p>Gimme the specs!</p>',
+            classes: ['intro']
+        });
+
+        this.layout.content.add(this.introTextModifier).add(this.introText);
 
         this.layout.content.add(this.lightBox);
 

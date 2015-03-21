@@ -15,6 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "famous": "~0.3.5"
+    "famous": "~0.3.5",
+    "lodash": "~3.5.0",
+    "svg-loaders": "~1.0.2"
   }
 }

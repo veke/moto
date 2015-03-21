@@ -7,8 +7,9 @@ define(function(require, exports, module) {
     'use strict';
 
     var Engine = require('famous/core/Engine');
-    var AppView = require('views/AppView');
     var Utility = require('famous/utilities/Utility');
+    var StateModifier = require('famous/modifiers/StateModifier');
+    var AppView = require('views/AppView');
 
     var mainContext = Engine.createContext();
 
@@ -24,7 +25,15 @@ define(function(require, exports, module) {
             data: data
         });
 
-        mainContext.add(appView);
+        var appModifier = new StateModifier({
+            opacity: 0
+        });
+
+        appModifier.setOpacity(1, {
+            duration: 800
+        });
+
+        mainContext.add(appModifier).add(appView);
 
     });
 

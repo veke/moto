@@ -130,6 +130,10 @@ define(function(require, exports, module) {
 
         var scrollView = new Scrollview();
 
+        var home = new MenuItemView({
+            title: 'Home'
+        });
+
         for (var i = 0; i < this.options.menuData.length; i++) {
 
             var item = new MenuItemView({
@@ -139,6 +143,8 @@ define(function(require, exports, module) {
             this.menuItems.push(item);
             item.pipe(scrollView);
         }
+
+        this.menuItems.push(home);
 
         scrollView.sequenceFrom(this.menuItems);
 
@@ -180,7 +186,7 @@ define(function(require, exports, module) {
             duration: 400
         });
 
-        for (var i = 0, duration = 430; i < this.options.menuData.length; i++, duration += 45) {
+        for (var i = 0, duration = 430; i < this.menuItems.length; i++, duration += 45) {
             this.menuItems[i].menuItemModifier.setTransform(
                 Transform.translate(13, 0, 0), {
                     duration: duration, curve: this.options.curve
@@ -204,7 +210,7 @@ define(function(require, exports, module) {
         this.toggleMenuIconTextModifier.setOpacity(0);
 
         // Menuitems
-        for (var i = 0; i < this.options.menuData.length; i++) {
+        for (var i = 0; i < this.menuItems.length; i++) {
             this.menuItems[i].menuItemModifier.setTransform(Transform.translate(-this.options.width - 1, 0, 0));
             this.menuItems[i].menuItemModifier.setOpacity(0);
         }
