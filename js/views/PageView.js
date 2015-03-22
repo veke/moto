@@ -109,12 +109,12 @@ define(function(require, exports, module) {
 
         var bodySurface = new ImageSurface({
             size: [undefined, true],
-            content: 'src/img/bg.jpg'
+            content: 'img/bg.jpg'
         });
 
         this.bodyBlurSurface = new ImageSurface({
             size: [undefined, true],
-            content: 'src/img/bg-blur.jpg'
+            content: 'img/bg-blur.jpg'
         });
 
         this.bodyBlurModifier = new StateModifier({

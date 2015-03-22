@@ -5,8 +5,8 @@ require.config({
     paths: {
         lodash: 'bower_components/lodash/lodash.min',
         famous: 'bower_components/famous/src',
-        views: 'src/views'
+        views: 'js/views'
     }
 });
 
-require(['src/App']);
+require(['js/App']);

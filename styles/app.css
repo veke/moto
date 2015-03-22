@@ -1,3 +1,5 @@
+@import url('../bower_components/famous/dist/famous.css');
+
 body, html {
 	height: 100%;
 }

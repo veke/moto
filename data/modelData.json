@@ -4,7 +4,7 @@
                 
                     {
                     "name": "CB1000R Pearl White",
-                    "imageUrl": "src/img/honda/cb1000r.jpg",
+                    "imageUrl": "data/img/honda/cb1000r.jpg",
                     "specs": [
                              
                              { "Price": "14,490€" },
@@ -22,7 +22,7 @@
                 
                     {
                     "name": "CBR1000RR",
-                    "imageUrl": "src/img/honda/cbr1000rr.jpg",
+                    "imageUrl": "data/img/honda/cbr1000rr.jpg",
                     "specs": [
                     
                             { "Price": "19,990€" },
@@ -45,7 +45,7 @@
                 
                     {
                     "name": "GSX1300RA",
-                    "imageUrl": "src/img/suzuki/gsx1300ra.png",
+                    "imageUrl": "data/img/suzuki/gsx1300ra.png",
                     "specs": [
                              
                              { "Price": "19,190€" },
@@ -63,7 +63,7 @@
                     
                     {
                     "name": "Intruder M1800RBZ",
-                    "imageUrl": "src/img/suzuki/intruder-m1800rbz.png",
+                    "imageUrl": "data/img/suzuki/intruder-m1800rbz.png",
                     "specs": [
                     
                             { "Price": "19,690€" },
@@ -81,7 +81,7 @@
                 
                     {
                     "name": "GSX-R1000Z",
-                    "imageUrl": "src/img/suzuki/gsxr1000z.png",
+                    "imageUrl": "data/img/suzuki/gsxr1000z.png",
                     "specs": [
                     
                             { "Price": "21,999€" },
@@ -99,7 +99,7 @@
                     
                     {
                     "name": "GSR750A",
-                    "imageUrl": "src/img/suzuki/gsr750a.png",
+                    "imageUrl": "data/img/suzuki/gsr750a.png",
                     "specs": [
                     
                             { "Price": "12,790€" },
@@ -122,7 +122,7 @@
             
                     {
                     "name": "ZZR1400",
-                    "imageUrl": "src/img/kawasaki/zzr1400.png",
+                    "imageUrl": "data/img/kawasaki/zzr1400.png",
                     "specs": [
                              
                              { "Price": "21,985€" },
@@ -140,7 +140,7 @@
                 
                     {
                     "name": "Z1000SX",
-                    "imageUrl": "src/img/kawasaki/z1000sx.png",
+                    "imageUrl": "data/img/kawasaki/z1000sx.png",
                     "specs": [
                              
                              { "Price": "18,270€" },
@@ -158,7 +158,7 @@
                     
                     {
                     "name": "Ninja ZX-10R",
-                    "imageUrl": "src/img/kawasaki/ninja-zx10r.png",
+                    "imageUrl": "data/img/kawasaki/ninja-zx10r.png",
                     "specs": [
                              
                              { "Price": "22,990€" },
@@ -176,7 +176,7 @@
                     
                     {
                     "name": "Z1000",
-                    "imageUrl": "src/img/kawasaki/z1000.png",
+                    "imageUrl": "data/img/kawasaki/z1000.png",
                     "specs": [
                              
                              { "Price": "15,990€" },
@@ -194,7 +194,7 @@
                     
                     {
                     "name": "Z800",
-                    "imageUrl": "src/img/kawasaki/z800.png",
+                    "imageUrl": "data/img/kawasaki/z800.png",
                     "specs": [
                              
                              { "Price": "12,480€" },
@@ -217,7 +217,7 @@
                 
                     {
                     "name": "YZF-R1",
-                    "imageUrl": "src/img/yamaha/yzf-r1.png",
+                    "imageUrl": "data/img/yamaha/yzf-r1.png",
                     "specs": [
                              
                              { "Price": "21,308€" },
@@ -238,7 +238,7 @@
                 
                     {
                     "name": "1000S RR",
-                    "imageUrl": "src/img/bmv/1000srr.png",
+                    "imageUrl": "data/img/bmv/1000srr.png",
                     "specs": [
                              
                              { "Price": "23,377€" },
@@ -259,7 +259,7 @@
                 
                     {
                     "name": "Monster 1200",
-                    "imageUrl": "src/img/ducati/monster1200.png",
+                    "imageUrl": "data/img/ducati/monster1200.png",
                     "specs": [
                              
                              { "Price": "18,961€" },

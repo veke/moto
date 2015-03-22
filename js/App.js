@@ -13,7 +13,7 @@ define(function(require, exports, module) {
 
     var mainContext = Engine.createContext();
 
-    Utility.loadURL('src/data/modelData.json', function(response) {
+    Utility.loadURL('data/modelData.json', function(response) {
 
         if (!response) {
             return;
