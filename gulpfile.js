@@ -4,7 +4,7 @@
 
 var gulp = require('gulp');
 var gls = require('gulp-live-server');
-var shell = require('gulp-shell')
+var shell = require('gulp-shell');
 var open = require('gulp-open');
 var del = require('del');
 var runSequence = require('run-sequence');
@@ -46,5 +46,5 @@ gulp.task('build', function(cb) {
 gulp.task('compress', function() {
 
     return gulp.src(['dist/js/main.js', 'dist/js/App.js']).pipe(uglify()).pipe(gulp.dest('dist/js'));
-    
+
 });
