@@ -36,12 +36,48 @@
                             { "Fuel Capacity": "17,5ltr" }
                             
                             ]
+                    },
+
+                    {
+                    "name": "CB650F ABS",
+                    "imageUrl": "data/img/honda/cb650f.jpg",
+                    "specs": [
+                    
+                            { "Price": "10,490€" },
+                            { "Engine": "647cc" },
+                            { "Torque": "63,0Nm / 8000rpm" },
+                            { "Power": "64,0kW (87,0hp) / 11000rpm" },
+                            { "Seat height": "810mm" },
+                            { "Weight": "208kg" },
+                            { "Tyres": "120/180" },
+                            { "Wheelbase": "1450mm" },
+                            { "Fuel Capacity": "17,3ltr" }
+                            
+                            ]
                     }
                 
                 ]
         },
         { 
             "Suzuki": [
+
+                {
+                    "name": "GSX-S1000FA",
+                    "imageUrl": "data/img/suzuki/gsxs1000fa.jpg",
+                    "specs": [
+                             
+                             { "Price": "17,190€" },
+                             { "Engine": "999cc" },
+                             { "Torque": "106Nm / 9500rpm" },
+                             { "Power": "107kW (145hp) / 10000rpm" },
+                             { "Seat height": "810mm" },
+                             { "Weight": "214kg" },
+                             { "Tyres": "120/190" },
+                             { "Wheelbase": "1460mm" },
+                             { "Fuel Capacity": "17ltr" }
+                             
+                             ]
+                    },
                 
                     {
                     "name": "GSX1300RA",
