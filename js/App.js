@@ -19,21 +19,25 @@ define(function(require, exports, module) {
             return;
         }
 
-        var data = JSON.parse(response);
+        Utility.loadURL('img/bg.jpg', function() {
 
-        var appView = new AppView({
-            data: data
+            var data = JSON.parse(response);
+
+            var appView = new AppView({
+                data: data
+            });
+
+            var appModifier = new StateModifier({
+                opacity: 0
+            });
+
+            appModifier.setOpacity(1, {
+                duration: 700
+            });
+
+            mainContext.add(appModifier).add(appView);
+
         });
-
-        var appModifier = new StateModifier({
-            opacity: 0
-        });
-
-        appModifier.setOpacity(1, {
-            duration: 800
-        });
-
-        mainContext.add(appModifier).add(appView);
 
     });
 

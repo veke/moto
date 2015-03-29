@@ -208,7 +208,12 @@ define(function(require, exports, module) {
                     duration: 200
                 });
 
-                this.pageView.lightBox.show(this.pageView.brands[targetSlide]);
+                this.pageView.lightBox.show(this.pageView.brands[targetSlide], null, function() {
+                    this.pageView.imgModifiers[targetSlide][0].setOpacity(1, {
+                        duration: 250
+                    });
+                }.bind(this));
+
                 this.menuView.menuItems[targetSlide].menuCurrentModifier.setOpacity(1, this.options.transition);
 
                 var currentSlide = this.pageView.brands[targetSlide].getCurrentIndex();
@@ -229,6 +234,8 @@ define(function(require, exports, module) {
             this.pageView.introTextModifier.setOpacity(1, {
                 duration: 200
             });
+
+            this.currentPage = null;
         }
 
     };

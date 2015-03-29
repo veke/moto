@@ -36,7 +36,8 @@ define(function(require, exports, module) {
         var len = this.options.data[index][brand].length;
         var container;
 
-        var models = [];
+        this.models = [];
+        this.imgModifiers = [];
 
         this.scrollView = new Scrollview({
             paginated: true,
@@ -44,7 +45,7 @@ define(function(require, exports, module) {
             pagePeriod: 400
         });
 
-        this.scrollView.sequenceFrom(models);
+        this.scrollView.sequenceFrom(this.models);
 
         for (var i = 0; i < len; i++) {
 
@@ -56,19 +57,24 @@ define(function(require, exports, module) {
                 specs: this.options.data[index][brand][i].specs
             });
 
-            container.add(model);
+            this.imgModifiers.push(model.modelImgModifier);
 
+            container.add(model);
             model.modelImgSurface.pipe(this.scrollView);
             model.bgSurface.pipe(this.scrollView);
             model.modelTitleSurface.pipe(this.scrollView);
 
-            models.push(container);
+            this.models.push(container);
 
         }
 
         this.scrollView.on('pageChange', function() {
 
             var currentPage = this.scrollView._node.index;
+
+            this.imgModifiers[currentPage].setOpacity(1, {
+                duration: 250
+            });
 
             this._eventOutput.emit('modelChange', currentPage);
 

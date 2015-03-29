@@ -129,6 +129,7 @@ define(function(require, exports, module) {
 
         this.brands = [];
         this.dots = [];
+        this.imgModifiers = [];
 
         for (var i = 0, len = modelData.length; i < len; i++) {
 
@@ -143,6 +144,7 @@ define(function(require, exports, module) {
             }.bind(this));
 
             this.brands.push(brand.scrollView);
+            this.imgModifiers.push(brand.imgModifiers);
 
             var dotModifiers = [];
 

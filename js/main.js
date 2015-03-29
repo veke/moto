@@ -5,6 +5,7 @@ require.config({
     paths: {
         lodash: 'bower_components/lodash/lodash.min',
         famous: 'bower_components/famous/src',
+        lazysizes: 'bower_components/lazysizes/lazysizes.min',
         views: 'js/views'
     }
 });

@@ -52,15 +52,16 @@ define(function(require, exports, module) {
             classes: ['modelImg']
         });
 
-        var modelImgModifier = new StateModifier({
+        this.modelImgModifier = new StateModifier({
             align: [0.5, 0],
             origin: [0.5, 0],
+            opacity: 0,
             transform: Transform.translate(0, 20, 0)
         });
 
         this.modelImgSurface.pipe(this._eventOutput);
 
-        this.add(modelImgModifier).add(this.modelImgSurface);
+        this.add(this.modelImgModifier).add(this.modelImgSurface);
 
     }
 
