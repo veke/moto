@@ -3,11 +3,11 @@
             "Honda": [
                 
                     {
-                    "name": "CB1000R Pearl White",
+                    "name": "CB1000R ABS",
                     "imageUrl": "data/img/honda/cb1000r.jpg",
                     "specs": [
                              
-                             { "Price": "14,490€" },
+                             { "Price": "14,990€" },
                              { "Engine": "998cc" },
                              { "Torque": "99,0Nm / 7750rpm" },
                              { "Power": "92,0kW (125,1hp) / 10000rpm" },
@@ -15,13 +15,14 @@
                              { "Weight": "217kg" },
                              { "Tyres": "120/180" },
                              { "Wheelbase": "1445mm" },
-                             { "Fuel Capacity": "17ltr" }
+                             { "Fuel Capacity": "17ltr" },
+                             { "Link": "<a href='http://www.hondabikes.fi/mallisto/naked/cb1000r-abs' target='_blank'>www.hondabikes.fi</a>" }
                              
                              ]
                     },
                 
                     {
-                    "name": "CBR1000RR",
+                    "name": "CBR1000RR Fireblade",
                     "imageUrl": "data/img/honda/cbr1000rr.jpg",
                     "specs": [
                     
@@ -33,8 +34,9 @@
                             { "Weight": "200kg" },
                             { "Tyres": "120/190" },
                             { "Wheelbase": "1410mm" },
-                            { "Fuel Capacity": "17,5ltr" }
-                            
+                            { "Fuel Capacity": "17,5ltr" },
+                            { "Link": "<a href='http://www.hondabikes.fi/mallisto/super-sport/cbr1000rr-abs' target='_blank'>www.hondabikes.fi</a>" }
+
                             ]
                     },
 
@@ -51,7 +53,8 @@
                             { "Weight": "208kg" },
                             { "Tyres": "120/180" },
                             { "Wheelbase": "1450mm" },
-                            { "Fuel Capacity": "17,3ltr" }
+                            { "Fuel Capacity": "17,3ltr" },
+                            { "Link": "<a href='http://www.hondabikes.fi/mallisto/naked/cb650f-abs' target='_blank'>www.hondabikes.fi</a>" }
                             
                             ]
                     }
@@ -74,13 +77,14 @@
                              { "Weight": "214kg" },
                              { "Tyres": "120/190" },
                              { "Wheelbase": "1460mm" },
-                             { "Fuel Capacity": "17ltr" }
+                             { "Fuel Capacity": "17ltr" },
+                             { "Link": "<a href='http://www.suzukifinland.fi/mp/gsx-s1000fa.php' target='_blank'>www.suzukifinland.fi/mp/</a>" }
                              
                              ]
                     },
                 
                     {
-                    "name": "GSX1300RA",
+                    "name": "GSX1300RA Hayabusa",
                     "imageUrl": "data/img/suzuki/gsx1300ra.png",
                     "specs": [
                              
@@ -88,31 +92,13 @@
                              { "Engine": "1340cc" },
                              { "Torque": "155Nm / 7200rpm" },
                              { "Power": "145kW (198hp) / 9500rpm" },
-                             { "Seat height": "825mm" },
+                             { "Seat height": "805mm" },
                              { "Weight": "260kg" },
-                             { "Tyres": "120/180" },
+                             { "Tyres": "120/190" },
                              { "Wheelbase": "1480mm" },
-                             { "Fuel Capacity": "21ltr" }
-                             
+                             { "Fuel Capacity": "21ltr" },
+                             { "Link": "<a href='http://www.suzukifinland.fi/mp/gsx1300rahayabusa_.php' target='_blank'>www.suzukifinland.fi/mp/</a>" }
                              ]
-                    },
-                    
-                    {
-                    "name": "Intruder M1800RBZ",
-                    "imageUrl": "data/img/suzuki/intruder-m1800rbz.png",
-                    "specs": [
-                    
-                            { "Price": "19,690€" },
-                            { "Engine": "999cc" },
-                            { "Torque": "160Nm / 3200rpm" },
-                            { "Power": "92kW (125hp) / 6200rpm" },
-                            { "Seat height": "705mm" },
-                            { "Weight": "347kg" },
-                            { "Tyres": "130/240" },
-                            { "Wheelbase": "1710mm" },
-                            { "Fuel Capacity": "19,5ltr" }
-                            
-                            ]
                     },
                 
                     {
@@ -129,16 +115,15 @@
                             { "Tyres": "120/190" },
                             { "Wheelbase": "1405mm" },
                             { "Fuel Capacity": "17,5ltr" }
-                            
                             ]
                     },
                     
                     {
-                    "name": "GSR750A",
-                    "imageUrl": "data/img/suzuki/gsr750a.png",
+                    "name": "GSR750A 2015",
+                    "imageUrl": "data/img/suzuki/gsr750a.jpg",
                     "specs": [
                     
-                            { "Price": "12,790€" },
+                            { "Price": "11,990€" },
                             { "Engine": "749cc" },
                             { "Torque": "80Nm / 9000rpm" },
                             { "Power": "78kW (106hp) / 10200rpm" },
@@ -146,8 +131,8 @@
                             { "Weight": "213kg" },
                             { "Tyres": "120/180" },
                             { "Wheelbase": "1450mm" },
-                            { "Fuel Capacity": "17,5ltr" }
-                            
+                            { "Fuel Capacity": "17,5ltr" },
+                            { "Link": "<a href='http://www.suzukifinland.fi/mp/gsr750a.php' target='_blank'>www.suzukifinland.fi/mp/</a>" }
                             ]
                     }
                 

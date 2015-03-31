@@ -125,6 +125,11 @@ body {
 	border-bottom: 0;
 	box-shadow: none;
 	}
+
+.specItem a {
+	color: #fff;
+	text-decoration: none;
+}
 	
 .iconArrowRight {
 	background-image: url('../img/icon-arrow-right.png');
